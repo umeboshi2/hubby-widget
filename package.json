@@ -28,7 +28,7 @@
     "bower": "^1.8.0",
     "brace": "^0.9.1",
     "browser-request": "^0.3.3",
-    "chunk-manifest-webpack-plugin": "^0.1.0",
+    "chunk-manifest-webpack-plugin": "^1.0.0",
     "clean-webpack-plugin": "^0.1.15",
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.10.0",
@@ -93,9 +93,9 @@
     "url-loader": "^0.5.7",
     "vie": "^2.1.2",
     "viewerjs": "^0.5.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-middleware": "^1.9.0",
-    "webpack-dev-server": "^1.16.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-dev-server": "^2.3.0",
     "webpack-manifest-plugin": "^1.1.0"
   }
 }

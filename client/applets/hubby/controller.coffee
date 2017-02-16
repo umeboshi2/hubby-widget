@@ -52,56 +52,45 @@ class Controller extends MainController
 
   show_calendar: (layout, region) ->
     #console.log "show_calendar", layout, region
-    require.ensure [], () =>
-      MeetingCalendarView  = require './calendarview'
-      options = {}
-      if region == 'minicalendar'
-        options.minicalendar = true
-        options.layout = layout
-      view = new MeetingCalendarView options
-      layout.showChildView region, view
-    # name the chunk
-    , 'hubby-show-calendar'
+    MeetingCalendarView  = require './calendarview'
+    options = {}
+    if region == 'minicalendar'
+      options.minicalendar = true
+      options.layout = layout
+    view = new MeetingCalendarView options
+    layout.showChildView region, view
     
-  mainview: ->
+  view_calendar: ->
     @setup_layout_if_needed()
     #console.log "mainview"
     @show_calendar @layout, 'content'
     
-
   list_meetings: ->
     @setup_layout_if_needed()
-    require.ensure [], () =>
-      { MainMeetingModel } = require './collections'
-      meetings = HubChannel.request 'meetinglist'
-      ListMeetingsView = require './listmeetingsview'
-      response = meetings.fetch()
-      response.done =>
-        view = new ListMeetingsView
-          collection: meetings
-        @layout.showChildView 'content', view
-      response.fail =>
-        MessageChannel.request 'danger', 'Failed to load meeting list'
-    # name the chunk
-    , 'hubby-list-meetings-view'
-
+    { MainMeetingModel } = require './collections'
+    meetings = HubChannel.request 'meetinglist'
+    ListMeetingsView = require './listmeetingsview'
+    response = meetings.fetch()
+    response.done =>
+      view = new ListMeetingsView
+        collection: meetings
+      @layout.showChildView 'content', view
+    response.fail =>
+      MessageChannel.request 'danger', 'Failed to load meeting list'
     
 
   show_meeting: (layout, region, meeting_id) ->
-    require.ensure [], () =>
-      { MainMeetingModel } = require './collections'
-      ShowMeetingView  = require './meetingview'
-      meeting = new MainMeetingModel
-        id: meeting_id
-      response = meeting.fetch()
-      response.done =>
-        view = new ShowMeetingView
-          model: meeting
-        layout.showChildView region, view
-      response.fail =>
-        MessageChannel.request 'danger', 'Failed to load meeting'
-    # name the chunk
-    , 'hubby-meetingview'
+    { MainMeetingModel } = require './collections'
+    ShowMeetingView  = require './meetingview'
+    meeting = new MainMeetingModel
+      id: meeting_id
+    response = meeting.fetch()
+    response.done =>
+      view = new ShowMeetingView
+        model: meeting
+      layout.showChildView region, view
+    response.fail =>
+      MessageChannel.request 'danger', 'Failed to load meeting'
     
   view_meeting: (meeting_id) ->
     @setup_layout_if_needed()

@@ -9,7 +9,7 @@ HubChannel = Backbone.Radio.channel 'hubby'
 
 class Router extends BootStrapAppRouter
   appRoutes:
-    'hubby': 'mainview'
+    'hubby': 'view_calendar'
     'hubby/listmeetings': 'list_meetings'
     'hubby/viewmeeting/:id': 'view_meeting'
     
@@ -24,10 +24,13 @@ HubChannel.reply 'maincalendar:get-date', () ->
   
 MainChannel.reply 'applet:hubby:route', () ->
   controller = new Controller MainChannel
+  HubChannel.reply 'main-calendar', ->
+    #controller.show_calendar controller.layout, 'content'
+    controller.view_calendar()
   HubChannel.reply 'view-calendar', (layout, region) ->
     controller.show_calendar layout, region
   HubChannel.reply 'view-meeting', (layout, region, id) ->
     controller.show_meeting layout, region, id
-  router = new Router
-    controller: controller
-
+  #router = new Router
+  #  controller: controller
+  

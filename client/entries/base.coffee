@@ -40,16 +40,4 @@ MainChannel.reply 'mainpage:init', (appmodel) ->
   MainChannel.trigger 'mainpage:displayed'
 
 
-MainChannel.on 'mainpage:displayed', ->
-  # this handler is useful if there are views that need to be
-  # added to the navbar.  The navbar should have regions to attach
-  # the views
-  # --- example ---
-  # view = new view
-  # aregion = MainChannel.request 'main:app:get-region', aregion
-  # aregion.show view
-
-  app = MainChannel.request 'main:app:object'
-  appmodel = MainChannel.request 'main:app:appmodel'
-
 module.exports = {}
