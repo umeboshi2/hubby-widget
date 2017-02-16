@@ -1,0 +1,140 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+//@import "partials/base";
+//@import "partials/sassybuttons";
+//@import "partials/fonts";
+
+// Import compass/typography for horizontal menu
+@import "compass/typography/lists/horizontal-list";
+@import "compass/typography/links/unstyled-link";
+@import "compass/css3/border-radius";
+@import "bootstrap/buttons";
+
+.hubby-meeting-header {
+    @include border-radius(0.5em);
+    background: darken($background-color, 15%);
+    color: $text-color;
+    //text-align: center;
+    //font-size: 1.5em;
+    position: relative;
+}
+
+.hubby-meeting-header-text {
+    text-align: center;
+    //font-size: 1.5em;
+    position: relative;
+}
+
+.hubby-meeting-item {
+    @include border-radius(0.5em);
+    background: darken($background-color, 5%);
+    border-style: solid;
+    border-color: $primary-color;
+    margin: 0.1em;
+    position: relative;
+}
+
+.hubby-meeting-agenda-header {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.hubby-meeting-header-agenda {
+    //position: absolute;
+    //top: 0.5em;
+    //left: 0.5em;
+    font-size: 0.8em;
+    margin: 0.5em;
+    font-family: "Play";
+}
+
+.hubby-meeting-header-minutes {
+    //position: absolute;
+    //top: 0;
+    //right: 0.5em;
+    font-size: 0.8em;
+    margin: 0.5em;
+    font-family: "Play";
+}
+
+
+.hubby-meeting-item-info {
+    font-size: 0.9em;
+    position: relative;
+    background: $background-color;
+}
+
+.hubby-meeting-item-agenda-num {
+    font-size: 0.8em;
+    font-weight: bold;
+    position: relative;
+    top: 0em;
+    left: 0.5em;
+}
+
+.hubby-meeting-item-fileid {
+    font-size: 0.8em;
+    font-weight: bold;
+    position: absolute;
+    top: 0em;
+    right: 0.5em;
+}
+
+.hubby-meeting-item-status {
+    font-family: "Play";
+    font-size: 0.8em;
+    font-weight: bold;
+    position: absolute;
+    top: 0em;
+    width: 100%;
+    text-align: center;
+}
+
+.hubby-meeting-item-text {
+    font-size: 1.0em;
+}
+
+.hubby-meeting-item-attachment-marker {
+    //@include sassy-button("simple");
+    @include button-variant($text-color, $background-color, $secondary-color);
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.hubby-meeting-item-action-marker {
+    //@include sassy-button("simple");
+    @include button-variant($text-color, $background-color, $secondary-color);
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.hubby-action-text {
+    font-size: 0.9em;
+    @include border-radius;
+    border-color: $background-color;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.hubby-meeting-item-attachments {
+    font-size: 0.8em;
+    z-index: 1;
+    position: absolute;
+    @include border-radius;
+    background: lighten($background-color, 4%);
+    border-style: solid;
+    border-color: $secondary-color;
+    border-width: 1px;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+.hubby-meeting-item-attachments-header {
+    @include border-bottom-radius;
+    text-align: center;
+    background: lighten($background-color, 5%);
+}
