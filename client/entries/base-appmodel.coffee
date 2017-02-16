@@ -11,8 +11,8 @@ appmodel = new BaseAppModel
   hasUser: false
   needUser: false
   brand:
-    name: 'FCD#3'
+    name: 'Hubby'
     url: '/'
-  frontdoor_app: 'xmlst'
+  frontdoor_app: 'hubby'
 
 module.exports = appmodel

@@ -50,7 +50,7 @@ common_plugins = [
   # https://github.com/webpack/webpack/issues/1016#issuecomment-182093533
   new webpack.optimize.CommonsChunkPlugin
     names: ['agate', 'vendor']
-    filename: MultiFilename[BuildEnvironment]
+    filename: WebPackOutputFilename[BuildEnvironment]
   new webpack.optimize.OccurenceOrderPlugin true
   new webpack.optimize.AggressiveMergingPlugin()
   new StatsPlugin StatsPluginFilename[BuildEnvironment], chunkModules: true
@@ -85,7 +85,7 @@ else
 WebPackConfig =
   #entry: entries
   entry:
-    index: './client/entries/index.coffee'
+    index: './client/entries/index'
   output: WebPackOutput
   plugins: AllPlugins
   module:

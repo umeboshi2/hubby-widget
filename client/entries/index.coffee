@@ -26,7 +26,7 @@ MainChannel.reply 'main:app:appmodel', ->
 
 ######################
 # require applets
-require '../applets/xmlst/main'
+require '../applets/hubby/main'
 
 app = prepare_app appmodel
 
