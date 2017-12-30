@@ -9,8 +9,9 @@ if not String.prototype?.endsWith
   String.prototype.endsWith = string_endswith
 
 
-  
 require 'bootstrap'
+require '../../assets/stylesheets/font-awesome-smallpath.css'  
+require '../../assets/stylesheets/bootstrap-cornsilk.css'  
 
 MainChannel = Backbone.Radio.channel 'global'
   

@@ -6,10 +6,10 @@ base_page = tc.renderable (appfile, manifest, theme) ->
     tc.head ->
       tc.meta charset:'utf-8'
       tc.meta name:'viewport', content:"width=device-width, initial-scale=1"
-      tc.link rel:'stylesheet', type:'text/css',
-      href:"assets/stylesheets/font-awesome.css"
-      tc.link rel:'stylesheet', type:'text/css',
-      href:"assets/stylesheets/bootstrap-#{theme}.css"
+      #tc.link rel:'stylesheet', type:'text/css',
+      #href:"assets/stylesheets/font-awesome.css"
+      #tc.link rel:'stylesheet', type:'text/css',
+      #href:"assets/stylesheets/bootstrap-#{theme}.css"
     tc.body ->
       tc.div '.container-fluid', ->
         tc.div '.row', ->

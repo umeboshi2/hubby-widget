@@ -54,6 +54,7 @@ MainChannel.on 'mainpage:displayed', ->
 
 # start the app
 app.start()
+console.log 'app started'
 
 module.exports = app
 

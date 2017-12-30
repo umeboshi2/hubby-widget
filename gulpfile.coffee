@@ -28,7 +28,6 @@ gulp.task 'compass', () ->
   .pipe size()
   .pipe gulp.dest 'assets/stylesheets'
 
-
 gulp.task 'webpack:build-dev', (callback) ->
   # run webpack
   DevConfig = require './webpack.config'

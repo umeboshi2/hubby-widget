@@ -7,6 +7,8 @@ ms = require 'ms'
 { SlideDownRegion } = require 'agate/src/regions'
 Util = require 'agate/src/apputil'
 
+MeetingCalendarView  = require './calendarview'
+
 MainChannel = Backbone.Radio.channel 'global'
 MessageChannel = Backbone.Radio.channel 'messages'
 HubChannel = Backbone.Radio.channel 'hubby'
@@ -52,7 +54,6 @@ class Controller extends MainController
 
   show_calendar: (layout, region) ->
     #console.log "show_calendar", layout, region
-    MeetingCalendarView  = require './calendarview'
     options = {}
     if region == 'minicalendar'
       options.minicalendar = true

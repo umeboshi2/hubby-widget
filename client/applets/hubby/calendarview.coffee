@@ -7,7 +7,9 @@ FullCalendar = require 'fullcalendar'
 
 # FIXME
 #require '../../node_modules/fullcalendar/dist/fullcalendar.css'
-require 'fullcalendar/dist/fullcalendar.css'
+calcss = require 'fullcalendar/dist/fullcalendar.css'
+window.calcss = calcss
+console.log "calcss", calcss
 
 HubChannel = Backbone.Radio.channel 'hubby'
 
@@ -50,7 +52,7 @@ class MeetingCalendarView extends Backbone.Marionette.View
   ui:
     calendar: '#maincalendar'
   options:
-    minicalendar: false
+    minicalendar: true
     layout: false
 
   onDomRefresh: () ->
@@ -60,7 +62,7 @@ class MeetingCalendarView extends Backbone.Marionette.View
         Backbone.history.navigate url, trigger: true
       else
         meeting_id = event.id
-        HubChannel.request 'view-meeting', @options.layout, 'meeting', meeting_id
+        HubChannel.request 'view-meeting', @options.layout, 'content', meeting_id
     date = HubChannel.request 'maincalendar:get-date'
     cal = @ui.calendar
     cal.fullCalendar

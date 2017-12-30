@@ -1,6 +1,12 @@
-//@import "partials/themes/bisque";
-//@import "partials/bootstrap-variables";
-//@import "bootstrap";
-//@import "partials/bootstrap-main";
+
+//@import "bootstrap-custom-basic";
+
 @import "bootstrap-variables";
 @import "bootstrap-styles";
+
+$background-color: $body-bg;
+$primary-color: $body-bg;
+$secondary-color: $text-color;
+
+@import "partials/listviews";
+@import "partials/fc-small";
